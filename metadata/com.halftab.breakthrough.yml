@@ -8,16 +8,17 @@ Description: |
   Break Through is an offline 2D side-scrolling game. Guide Guy through
   the course, shoot breakable glass barriers, collect powerups, and survive
   as long as possible.
+SourceCode: https://github.com/Halftab/BreakThrough
+IssueTracker: https://github.com/Halftab/BreakThrough/issues
 RepoType: git
-Repo: REPLACE_WITH_YOUR_PUBLIC_GITHUB_REPOSITORY
+Repo: https://github.com/Halftab/BreakThrough.git
 Builds:
   - versionName: '1.0'
     versionCode: 1
-    commit: REPLACE_WITH_FULL_COMMIT_HASH
-    subdir: android
+    commit: d16a1b42fd0e7ecd2c28d0acc9bdb61886cca7f6
     gradle: yes
     output: app/build/outputs/apk/release/app-release.apk
 UpdateCheckMode: Tags
-UpdateCheckData: android/app/build.gradle|versionCode\s+(\d+)
+UpdateCheckData: app/build.gradle|versionCode\s+(\d+)
 CurrentVersion: '1.0'
 CurrentVersionCode: 1
