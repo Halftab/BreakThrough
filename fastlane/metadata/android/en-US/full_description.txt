@@ -1,0 +1,5 @@
+Break Through is an offline 2D side-scrolling game.
+
+Guide Guy through the course, shoot breakable glass barriers, collect powerups, and survive as long as possible.
+
+No ads, analytics, accounts, or network connection are required.

@@ -1,0 +1,23 @@
+Categories:
+  - Games
+License: Apache-2.0
+AuthorName: Aftab Alam
+Name: Break Through
+Summary: Offline side-scrolling glass-breaking game
+Description: |
+  Break Through is an offline 2D side-scrolling game. Guide Guy through
+  the course, shoot breakable glass barriers, collect powerups, and survive
+  as long as possible.
+RepoType: git
+Repo: REPLACE_WITH_YOUR_PUBLIC_GITHUB_REPOSITORY
+Builds:
+  - versionName: '1.0'
+    versionCode: 1
+    commit: REPLACE_WITH_FULL_COMMIT_HASH
+    subdir: android
+    gradle: yes
+    output: app/build/outputs/apk/release/app-release.apk
+UpdateCheckMode: Tags
+UpdateCheckData: android/app/build.gradle|versionCode\s+(\d+)
+CurrentVersion: '1.0'
+CurrentVersionCode: 1
