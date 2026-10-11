@@ -8,6 +8,27 @@
 <script>
 (function(){'use strict';
 const canvas=document.getElementById('game'),ctx=canvas.getContext('2d');
+
+// Compatibility fallback for older Android WebView versions that lack
+// CanvasRenderingContext2D.roundRect(). Keep native implementations untouched.
+if (typeof CanvasRenderingContext2D.prototype.roundRect !== 'function') {
+  CanvasRenderingContext2D.prototype.roundRect = function(x, y, width, height, radius) {
+    const r = Math.max(0, Math.min(Number(radius) || 0, Math.abs(width) / 2, Math.abs(height) / 2));
+    const right = x + width;
+    const bottom = y + height;
+    this.moveTo(x + r, y);
+    this.lineTo(right - r, y);
+    this.quadraticCurveTo(right, y, right, y + r);
+    this.lineTo(right, bottom - r);
+    this.quadraticCurveTo(right, bottom, right - r, bottom);
+    this.lineTo(x + r, bottom);
+    this.quadraticCurveTo(x, bottom, x, bottom - r);
+    this.lineTo(x, y + r);
+    this.quadraticCurveTo(x, y, x + r, y);
+    return this;
+  };
+}
+
 const BASE_W=1672,BASE_H=940;
 let W=BASE_W,H=BASE_H,FLOOR=695,CEILING=35;
 let renderScale=1,renderDpr=1;
